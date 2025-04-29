@@ -1,0 +1,33 @@
+<div
+  class="flex flex-column justify-content-center align-items-center min-h-screen w-full px-4 text-center transition-all duration-300 shadow-5 glass-gradient-card"
+  [ngClass]="{
+    'surface-900 text-white': isDarkMode,
+    'surface-ground text-black': !isDarkMode
+  }"
+>
+  <!-- Headline -->
+  <h1
+    class="text-4xl md:text-6xl font-bold mb-2 transition-all duration-300"
+    [ngClass]="{ 'text-0': isDarkMode, 'text-900': !isDarkMode }">
+    Instantly Convert & Explain Code.
+  </h1>
+
+  <!-- Subheading -->
+  <p
+    class="text-lg md:text-xl max-w-30rem mb-5 transition-all duration-300"
+    [ngClass]="{ 'text-300': isDarkMode, 'text-600': !isDarkMode }">
+    Boost productivity and streamline your workflow—convert, generate, and understand code across languages with ease.
+  </p>
+
+  <!-- Call-to-Action Button -->
+  <button pButton
+    label="Start Now — It's Free"
+    title="Start Now — It's Free"
+    class="p-button-rounded p-button-success px-4 py-3 text-lg font-semibold"
+    icon="pi pi-bolt"
+    (click)="goToConvertPanel()">
+    Start Now — It's Free
+  </button>
+</div>
+
+

@@ -1,0 +1,107 @@
+<!-- Dark/light Theme -->
+<div
+  class="relative card border-round-xs shadow-2 transition-all transition-duration-300"
+  [style]="{ height: '100%', borderRadius: '1rem', overflow: 'hidden' }"
+  [ngClass]="{
+    'bg-gray-900 text-white': isDarkMode,
+    'bg-white text-gray-900': !isDarkMode
+  }"
+>
+
+<!-- toast animation for submit button -->
+<p-toast
+  position="top-right"
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'300ms'"
+  [hideTransitionOptions]="'1000ms'">
+</p-toast>
+
+<div class="min-h-screen overflow-hidden flex justify-content-center align-items-center p-4 w-full">
+
+  <!-- Moving colorful background -->
+  <div class="absolute top-0 left-0 w-full h-full animated-bg z-0"></div>
+
+  <!-- form card (already glass, animated) -->
+  <div class="w-full sm:w-10 md:w-8 lg:w-6 z-10">
+    <div class="border-round-3xl shadow-6 glass-gradient-card p-6 animate-fade-in">
+
+      <!-- Heading + description -->
+      <div class="text-center mb-5">
+        <h2 class="text-4xl font-bold mb-2 text-gray-400">Contact Us</h2>
+        <p class="font-semibold text-gray-400">Have a question or just want to connect? Fill out the form below and we'll get back to you as soon as possible.</p>
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="animate-slide-up">
+
+        <!-- Name with Float Label & Tooltip -->
+        <div class="mb-5">
+          <p-floatLabel>
+            <input
+              id="name"
+              type="text"
+              pInputText
+              pTooltip="Enter your full name"
+              tooltipPosition="top"
+              formControlName="name"
+              class="w-full border border-round-md"
+              [ngClass]="inputClasses('name')" />
+            <label for="name">Full Name</label>
+          </p-floatLabel>
+          <small *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+                 class="text-red-400">Name is required</small>
+        </div>
+
+        <!-- Email with Float Label & Tooltip -->
+        <div class="mb-5">
+          <p-floatLabel>
+            <input
+              id="email"
+              type="email"
+              pInputText
+              pTooltip="Enter your email address"
+              tooltipPosition="top"
+              formControlName="email"
+              class="w-full border border-round-md"
+              [ngClass]="inputClasses('email')" />
+            <label for="email">Email Address</label>
+          </p-floatLabel>
+          <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+                 class="text-red-400">Enter a valid email</small>
+        </div>
+
+        <!-- Message with Float Label & Tooltip -->
+        <div class="mb-5">
+          <p-floatLabel>
+            <textarea
+              id="message"
+              pInputText
+              pTooltip="Enter your message or question"
+              tooltipPosition="top"
+              formControlName="message"
+              class="w-full border resize-none border-round-md"
+              [ngClass]="inputClasses('message')"></textarea>
+            <label for="message">Your Message</label>
+          </p-floatLabel>
+          <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                 class="text-red-400">Message is required</small>
+        </div>
+
+        <!-- Submit button with toast alert & Tooltip -->
+        <p-button
+          type="submit"
+          pTooltip="Submit to proceed"
+          tooltipPosition="bottom"
+          showDelay="1000"
+          hideDelay="300"
+          [label]="loading ? 'Sending...' : 'Send Message'"
+          icon="pi pi-send"
+          [loading]="loading"
+          [disabled]="contactForm.invalid || loading"
+          styleClass="w-full text-white border-none text-sm btn-glow">
+        </p-button>
+      </form>
+    </div>
+   </div>
+  </div>
+</div>
+

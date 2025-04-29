@@ -1,0 +1,34 @@
+:host ::ng-deep .custom-splitter {
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* Glowing vertical gutter */
+:host ::ng-deep .custom-splitter .p-splitter-gutter {
+  background: rgba(34, 197, 94, 0.3);
+  width: 6px !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Optional: enhance gutter on hover or drag */
+:host ::ng-deep .custom-splitter .p-splitter-gutter:hover {
+  background: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+}
+
+/* Gutter handle (center grip) */
+:host ::ng-deep .custom-splitter .p-splitter-gutter .p-splitter-gutter-handle {
+  background-color: rgba(34, 197, 94, 0.6);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+}
+
+

@@ -1,0 +1,107 @@
+<!-- Dark/light Theme -->
+<div
+  class="relative card p-4 border-round-xs shadow-2 transition-all transition-duration-300"
+  [style]="{ height: '95%', borderRadius: '1rem', overflowY: 'auto' }"
+  [ngClass]="{
+    'bg-gray-900 text-white': isDarkMode,
+    'bg-white text-gray-900': !isDarkMode
+  }"
+>
+<div class="min-h-screen overflow-hidden flex justify-content-center align-items-center p-2 w-full">
+    <div class="border-round-3xl shadow-5 glass-gradient-card p-6 animate-fade-in">
+
+      <!-- Main Heading -->
+      <div class="text-center mb-6">
+        <h1 class="text-6xl font-bold mb-2">About Us</h1>
+        <h2 class="text-2xl text-primary font-semibold">Meet AnyCodeAnywhere</h2>
+      </div>
+
+      <p class="text-lg mb-6 text-center max-w-4xl mx-auto font-semibold">
+        Your Ultimate Destination for Seamless AI-Powered Code Conversion
+      </p>
+
+      <p class="text-justify max-w-5xl mx-auto mb-6">
+        Hi, I am <strong>Sayan Ghosh</strong> and Welcome to <strong>AnyCodeAnywhere</strong>, the intelligent way to
+        transform source code between any programming languages with ease and
+        precision. Whether you're a developer, student, engineer, or tech
+        enthusiast, our cutting-edge platform is built to simplify your workflow
+        and boost your productivity. With just a few clicks, you can effortlessly
+        translate your code and focus more on building amazing software.
+      </p>
+
+      <p-divider></p-divider>
+
+      <!-- Why Choose Us -->
+      <div class="text-center mb-6">
+        <h2 class="text-2xl text-primary font-semibold mb-4">
+          Why Choose AnyCodeAnywhere?
+        </h2>
+      </div>
+
+      <ul class="list-disc ml-10 mb-6">
+        <li *ngFor="let point of whyChooseUsPoints">
+          <span class="font-bold">{{ point.title }}:</span>
+          {{ point.description }}
+        </li>
+      </ul>
+
+      <p-divider></p-divider>
+
+      <!-- How to Convert -->
+      <div class="text-center mb-6">
+        <h2 class="text-2xl text-primary font-semibold mb-4">How to Convert Your Code in Three Easy Steps</h2>
+      </div>
+
+      <ol class="list-decimal ml-10 mb-6">
+        <li *ngFor="let step of howToConvertSteps">
+          {{ step.step }}
+        </li>
+      </ol>
+
+      <p-divider></p-divider>
+
+      <!-- Who Benefits -->
+      <div class="text-center mb-6">
+        <h2 class="text-2xl text-primary font-semibold mb-4">Who Benefits from AnyCodeAnywhere?</h2>
+      </div>
+
+      <ul class="list-disc ml-10 mb-6">
+        <li *ngFor="let benefit of whoBenefitsPoints">
+          <span class="font-bold">{{ benefit.title }}:</span> {{ benefit.description }}
+        </li>
+      </ul>
+
+      <p-divider></p-divider>
+
+      <!-- How It Works -->
+      <div class="text-center mb-6">
+        <h2 class="text-2xl text-primary font-semibold mb-4">How AnyCodeAnywhere Works</h2>
+      </div>
+
+      <ol class="list-decimal ml-10 mb-6">
+        <li *ngFor="let step of howItWorksSteps">
+          <span class="font-bold">{{ step.title }}:</span> {{ step.description }}
+        </li>
+      </ol>
+
+      <p-divider></p-divider>
+
+      <!-- Get Started Now -->
+      <div class="text-center">
+        <h2 class="text-2xl text-primary font-semibold mb-4">Get Started Now</h2>
+        <p class="max-w-3xl mx-auto text-center mb-6">
+          Say goodbye to tedious manual rewrites. Whether it's a personal project,
+          professional task, or new learning adventure,
+          <strong>AnyCodeAnywhere</strong> empowers you to switch between
+          programming languages effortlessly.
+        </p>
+        <p class="text-primary font-bold">
+          Unlock the full potential of your code today with © AnyCodeAnywhere 2025 made by Developer Sayan Ghosh — the
+          smarter way to transform code.
+        </p>
+      </div>
+    </div>
+</div>
+
+
+

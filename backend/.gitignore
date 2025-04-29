@@ -1,0 +1,33 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE specific
+.vscode/
+.idea/
+
+# Flask-related
+instance/
+*.db
+*.sqlite3
+
+# Log files
+*.log
+
+# Files generated during runtime
+*.bak
+*.swp
+*.tmp
+static/files/*.txt 
+

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeflex/themes/primeone-light.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter";
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+// body.dark-mode {
+//   background-color: #121212;
+//   color: white;
+// }
+

@@ -1,0 +1,27 @@
+
+/* glass card stays above moving background */
+:host ::ng-deep .glass-gradient-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 123, 255, 0.1) 50%,
+    rgba(255, 0, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+/* Fade In Animation */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/*Fade In Animation Keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95);}
+  100% { opacity: 1; transform: scale(1);}
+}
+

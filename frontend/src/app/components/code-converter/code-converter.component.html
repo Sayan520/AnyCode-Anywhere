@@ -1,0 +1,170 @@
+<!-- Dark/light Theme -->
+<div
+  class="card p-4 border-round-xs shadow-2 transition-all transition-duration-300"
+  [style]="{ height: '100%', borderRadius: '1rem', overflowY: 'auto' }"
+  [ngClass]="{
+    'bg-gray-900 text-white': isDarkMode,
+    'bg-white text-gray-900': !isDarkMode
+  }"
+>
+  <!-- Horizontal Splitter for Input and Output Panels -->
+  <p-splitter
+    [layout]="isMobileView ? 'vertical' : 'horizontal'"
+    [style]="{ width: '100%', height: isMobileView ? 'auto' : '500px' }"
+    styleClass="custom-splitter mb-8"
+  >
+    <!-- Input Panel -->
+    <ng-template pTemplate="panel">
+      <div
+        class="grid w-full p-4 gap-3"
+        [ngClass]="{
+          'bg-gray-900 text-white': isDarkMode,
+          'bg-white text-gray-900': !isDarkMode
+        }"
+      >
+        <!-- Compact Dropdown at Top-Left -->
+        <p-select
+          [options]="programmingLanguages"
+          [(ngModel)]="selectedInputLang"
+          optionLabel="name"
+          [filter]="true"
+          filterBy="name"
+          [showClear]="true"
+          placeholder="Select Language"
+          class="w-40 text-sm"
+          [ngClass]="{
+            'bg-gray-900 text-white border border-gray-700 rounded-md':
+              isDarkMode,
+            'bg-white text-gray-900 border border-gray-300 rounded-md':
+              !isDarkMode
+          }"
+          [panelStyleClass]="
+            isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+          "
+        >
+          <ng-template #selectedItem let-selectedOption>
+            <div class="flex items-center gap-2">
+              <i class="pi pi-code"></i>
+              <div>{{ selectedOption.name }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-lang #item>
+            <div class="flex items-center gap-2">
+              <i class="pi pi-code"></i>
+              <div>{{ lang.name }}</div>
+            </div>
+          </ng-template>
+        </p-select>
+
+        <!-- Code Input Area -->
+        <textarea
+          [(ngModel)]="inputCode"
+          placeholder="Write your code here..."
+          class="w-full h-26rem resize-none outline-none p-3 text-sm border-round-3xl rounded-md shadow-inner"
+          [ngClass]="{
+            'bg-gray-800 text-white': isDarkMode,
+            'bg-gray-100 text-gray-900': !isDarkMode
+          }"
+        ></textarea>
+      </div>
+    </ng-template>
+
+    <!-- Output Panel -->
+    <ng-template pTemplate="panel">
+      <div
+        class="grid w-full p-4 gap-3"
+        [ngClass]="{
+          'bg-gray-900 text-white': isDarkMode,
+          'bg-white text-gray-900': !isDarkMode
+        }"
+      >
+        <!-- Compact Dropdown at Top-Left -->
+        <p-select
+          [options]="programmingLanguages"
+          [(ngModel)]="selectedOutputLang"
+          optionLabel="name"
+          [filter]="true"
+          filterBy="name"
+          [showClear]="true"
+          placeholder="Select Language"
+          class="w-40 text-sm"
+          [ngClass]="{
+            'bg-gray-900 text-white border border-gray-700 rounded-md':
+              isDarkMode,
+            'bg-white text-gray-900 border border-gray-300 rounded-md':
+              !isDarkMode
+          }"
+          [panelStyleClass]="
+            isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+          "
+        >
+          <ng-template #selectedItem let-selectedOption>
+            <div class="flex items-center gap-2">
+              <i class="pi pi-code"></i>
+              <div>{{ selectedOption.name }}</div>
+            </div>
+          </ng-template>
+          <ng-template let-lang #item>
+            <div class="flex items-center gap-2">
+              <i class="pi pi-code"></i>
+              <div>{{ lang.name }}</div>
+            </div>
+          </ng-template>
+        </p-select>
+
+        <!-- Convert Button -->
+        <p-button
+          label="Convert"
+          icon="pi pi-cog"
+          styleClass="text-sm border-none text-white"
+          [loading]="isConverting"
+          (onClick)="startConversion()"
+        ></p-button>
+
+        <!-- Download Button -->
+        <p-button
+          *ngIf="downloadUrl"
+          [icon]="isDownloading ? 'pi pi-file-check' : 'pi pi-download'"
+          [label]="isDownloading ? 'Downloaded' : 'Download'"
+          (click)="downloadConvertedCode()"
+          styleClass="text-sm border-none text-white"
+        >
+        </p-button>
+
+        <div class="flex align-content-between justify-content-end w-full">
+          <!-- Code Output Area-->
+          <textarea
+            [value]="outputCode"
+            readonly
+            placeholder="Converted code will appear here..."
+            class="w-full h-26rem resize-none outline-none p-3 pr-10 text-sm border-round-3xl rounded-md shadow-inner"
+            [ngClass]="{
+              'bg-gray-800 text-white': isDarkMode,
+              'bg-gray-100 text-gray-900': !isDarkMode
+            }"
+          ></textarea>
+
+          <!-- Copy Button-->
+          <p-button
+            (click)="copyToClipboard()"
+            class="absolute top-4 right-4 px-4 py-3 rounded-md z-10"
+            [ngClass]="{
+              'text-white hover:bg-gray-600': isDarkMode,
+              'text-gray-800 hover:bg-gray-600': !isDarkMode
+            }"
+            [style]="{ width: '2rem', height: '2rem' }"
+          >
+            <i [class]="copied ? 'pi pi-check' : 'pi pi-copy'"></i>
+          </p-button>
+          <!-- Copied -->
+          <div
+            *ngIf="copied"
+            class="absolute top-4 right-16 bg-green-100 text-green-800 px-2 py-1 rounded-md text-sm transition-opacity duration-300"
+          >
+            Copied!
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-splitter>
+</div>

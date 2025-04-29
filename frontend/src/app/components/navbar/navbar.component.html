@@ -1,0 +1,101 @@
+<!-- Navbar -->
+<nav
+  [ngClass]="{ 'surface-900': isDarkMode, 'surface-100': !isDarkMode }"
+  class="flex align-items-center justify-content-between px-4 py-3 shadow-2 transition-all duration-300"
+>
+  <!-- Left Side: Logo + Title -->
+  <div class="flex align-items-center gap-2 ml-3 cursor-pointer" routerLink="/">
+    <img
+      src="assets/icons/conversion.png"
+      alt="Logo"
+      class="app-logo"
+      width="30"
+      height="30"
+    />
+    <div
+      [ngClass]="{ 'text-indigo-400': isDarkMode, 'text-black': !isDarkMode }"
+      class="text-2xl font-bold"
+    >
+      AnyCodeAnywhere
+    </div>
+  </div>
+
+  <!-- Right Side (Desktop) -->
+  <div class="hidden md:flex align-items-center gap-2">
+    <!-- Theme Toggle -->
+    <button
+      pButton
+      type="button"
+      title="Toggle Theme"
+      class="p-button-rounded p-button-text p-button-plain px-2 py-2"
+      (click)="toggleTheme()"
+    >
+      <i
+        [ngClass]="
+          isDarkMode ? 'pi pi-sun text-yellow-500' : 'pi pi-moon text-gray-800'
+        "
+      ></i>
+    </button>
+
+    <!-- Contact Link -->
+    <button
+      pButton
+      type="button"
+      title="Contact Us"
+      routerLink="/contact"
+      routerLinkActive="p-button-outlined"
+      [routerLinkActiveOptions]="{ exact: true }"
+      label="Contact"
+      icon="pi pi-phone"
+      class="p-button-text"
+      [ngClass]="{ 'text-primary': isDarkMode, 'text-black': !isDarkMode }"
+    ></button>
+
+    <!-- About Us Link -->
+    <button
+      pButton
+      type="button"
+      title="About Us"
+      routerLink="/about"
+      label="About Us"
+      icon="pi pi-info-circle"
+      class="p-button-text"
+      [ngClass]="{ 'text-primary': isDarkMode, 'text-black': !isDarkMode }"
+    ></button>
+  </div>
+
+  <!-- Mobile View: Theme Toggle + Hamburger Menu -->
+  <div class="flex-column md:hidden items-center gap-2">
+    <!-- Theme Toggle (always present) -->
+    <button
+      pButton
+      type="button"
+      title="Toggle Theme"
+      class="p-button-rounded p-button-text p-button-plain px-2 py-2"
+      (click)="toggleTheme()"
+    >
+      <i
+        [ngClass]="
+          isDarkMode ? 'pi pi-sun text-yellow-500' : 'pi pi-moon text-gray-800'
+        "
+      ></i>
+    </button>
+
+    <!-- Hamburger Menu -->
+    <button
+    type="button"
+    title="Toggle Menu"
+    class="p-button-text text-2xl"
+    [ngClass]="{ 'text-white': isDarkMode, 'text-black': !isDarkMode }"
+    (click)="toggleMenu($event, mobileMenu)"
+    >
+    <i class="pi pi-bars"></i>
+  </button>
+
+  <!-- Popup Menu -->
+  <p-menu #mobileMenu
+  [model]="menuItems"
+  [popup]="true">
+</p-menu>
+</div>
+</nav>
