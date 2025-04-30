@@ -67,7 +67,7 @@ def convert_code(input_language, output_language, code):
 # Route for default homepage
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return "API is working!"
 
 # Route for the code conversion
 @app.route("/api/convert", methods=["POST"])
