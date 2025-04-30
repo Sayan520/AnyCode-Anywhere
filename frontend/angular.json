@@ -37,7 +37,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "development": {
               "budgets": [
                 {
                   "type": "initial",
@@ -52,7 +52,7 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
+            "production": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
