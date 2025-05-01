@@ -12,6 +12,7 @@ npm-debug.log
 yarn-error.log
 
 # IDEs and editors
+.vscode/
 .idea/
 .project
 .classpath
@@ -38,5 +39,9 @@ testem.log
 /typings
 
 # System files
+.DS_Store
+Thumbs.db
+
+# OS files
 .DS_Store
 Thumbs.db
