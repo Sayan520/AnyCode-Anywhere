@@ -4,16 +4,16 @@
   class="flex align-items-center justify-content-between px-4 py-3 shadow-2 transition-all duration-300"
 >
   <!-- Left Side: Logo + Title -->
-  <div class="flex align-items-center gap-2 ml-3 cursor-pointer" routerLink="/">
+  <div class="flex align-items-center justify-content-between gap-1 ml-2 cursor-pointer" routerLink="/">
     <img
-      src="assets/icons/conversion.png"
+      src="assets/icons/programmer.gif"
       alt="Logo"
-      class="app-logo"
-      width="30"
-      height="30"
+      class="app-logo border-indigo-400 border-round-3xl transition-all duration-300"
+      width="40"
+      height="40"
     />
     <div
-      [ngClass]="{ 'text-indigo-400': isDarkMode, 'text-black': !isDarkMode }"
+      [ngClass]="{ 'text-indigo-400': isDarkMode, 'text-indigo-900': !isDarkMode }"
       class="text-2xl font-bold"
     >
       AnyCodeAnywhere
@@ -81,21 +81,32 @@
       ></i>
     </button>
 
-    <!-- Hamburger Menu -->
-    <button
-    type="button"
-    title="Toggle Menu"
-    class="p-button-text text-2xl"
-    [ngClass]="{ 'text-white': isDarkMode, 'text-black': !isDarkMode }"
-    (click)="toggleMenu($event, mobileMenu)"
-    >
-    <i class="pi pi-bars"></i>
-  </button>
+<!-- Hamburger Menu Button -->
+<button
+  type="button"
+  pButton
+  icon="pi pi-bars"
+  class="p-button-text text-2xl border-round-md shadow-"
+  title="Open Menu"
+  [ngClass]="{
+    'text-white': isDarkMode,
+    'text-black': !isDarkMode
+  }"
+  (click)="toggleMenu($event, mobileMenu)"
+></button>
 
-  <!-- Popup Menu -->
-  <p-menu #mobileMenu
+<!-- Styled Menu using PrimeFlex only -->
+<p-menu
+  #mobileMenu
   [model]="menuItems"
-  [popup]="true">
-</p-menu>
+  [popup]="true"
+  [styleClass]="
+    (isDarkMode
+      ? 'bg-gray-900 text-white border-none shadow-6'
+      : 'bg-white text-gray-900 border-1 border-gray-300 shadow-4') +
+    ' p-2 border-round-xl w-12rem'
+  "
+></p-menu>
+
 </div>
 </nav>

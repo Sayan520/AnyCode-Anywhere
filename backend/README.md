@@ -21,8 +21,8 @@ This is the backend for the **AI Code Converter** project. It allows you to conv
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo/backend
+git clone https://github.com/Sayan520/AnyCode-Anywhere.git
+cd .\AnyCode-Anywhere\backend\
 ```
 
 ### 2. Create and Activate Virtual Environment
@@ -75,7 +75,7 @@ Convert code between programming languages.
   "code": "print('Hello')",
   "input_language": "python",
   "output_language": "javascript",
-  "filename": "converted"
+  "filename": "py_to_js_converted"
 }
 ```
 
@@ -96,7 +96,7 @@ Submit a contact message.
 **Request JSON:**
 ```json
 {
-  "name": "Sayan",
+  "name": "Sayan Ghosh",
   "email": "sayan@example.com",
   "message": "Awesome project!"
 }

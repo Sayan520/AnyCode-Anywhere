@@ -140,5 +140,3 @@ export class CodeConverterComponent implements OnInit {
   }
 }
 
-
-// TypeScript type assignment error resolution(copilot chat history)

@@ -8,26 +8,30 @@
   <!-- Headline -->
   <h1
     class="text-4xl md:text-6xl font-bold mb-2 transition-all duration-300"
-    [ngClass]="{ 'text-0': isDarkMode, 'text-900': !isDarkMode }">
-    Instantly Convert & Explain Code.
+    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }">
+    Convert Code. Instantly. Anywhere.
   </h1>
 
   <!-- Subheading -->
   <p
     class="text-lg md:text-xl max-w-30rem mb-5 transition-all duration-300"
-    [ngClass]="{ 'text-300': isDarkMode, 'text-600': !isDarkMode }">
-    Boost productivity and streamline your workflow—convert, generate, and understand code across languages with ease.
-  </p>
+    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }">
+    Simplify your workflow by converting code between multiple programming languages—fast, accurate, and effortless.
+</p>
 
-  <!-- Call-to-Action Button -->
-  <button pButton
-    label="Start Now — It's Free"
-    title="Start Now — It's Free"
-    class="p-button-rounded p-button-success px-4 py-3 text-lg font-semibold"
-    icon="pi pi-bolt"
-    (click)="goToConvertPanel()">
+  <!-- Call-to-Action Button with Tooltip -->
+  <button
+  pButton
+  class="p-button-rounded p-button-success px-4 py-3 text-lg font-semibold flex items-center gap-2 group"
+  (click)="goToConvertPanel()"
+  pTooltip="Click to start..."
+  tooltipPosition="bottom">
+  <i class="pi pi-bolt text-xl group-hover:animate-bounce transition duration-300"></i>
+  <span class="transition duration-300 group-hover:tracking-wide">
     Start Now — It's Free
-  </button>
+  </span>
+</button>
+
 </div>
 
 

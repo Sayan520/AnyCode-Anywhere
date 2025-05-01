@@ -68,8 +68,8 @@ Follow these steps to run AnyCode Anywhere locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/any-code-anywhere.git
-cd any-code-anywhere
+git clone https://github.com/Sayan520/AnyCode-Anywhere.git
+cd AnyCode-Anywhere
 ```
 
 ### 2. Frontend Setup (Angular)
@@ -77,7 +77,7 @@ cd any-code-anywhere
 ```bash
 cd frontend
 npm install
-npm start
+ng serve
 ```
 
 > This will start the Angular frontend on `http://localhost:4200/`

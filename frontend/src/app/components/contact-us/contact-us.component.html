@@ -16,13 +16,13 @@
   [hideTransitionOptions]="'1000ms'">
 </p-toast>
 
-<div class="min-h-screen overflow-hidden flex justify-content-center align-items-center p-4 w-full">
+<div class="min-h-screen overflow-hidden flex justify-content-center align-items-center w-full">
 
   <!-- Moving colorful background -->
-  <div class="absolute top-0 left-0 w-full h-full animated-bg z-0"></div>
+  <div class="absolute top-0 left-0 w-full h-full animated-bg"></div>
 
-  <!-- form card (already glass, animated) -->
-  <div class="w-full sm:w-10 md:w-8 lg:w-6 z-10">
+  <!--Glass effect card with animation -->
+  <div class="w-full sm:w-10 md:w-8 lg:w-6 xl:w-4 2xl:w-3 flex justify-content-center align-items-center">
     <div class="border-round-3xl shadow-6 glass-gradient-card p-6 animate-fade-in">
 
       <!-- Heading + description -->
@@ -31,6 +31,7 @@
         <p class="font-semibold text-gray-400">Have a question or just want to connect? Fill out the form below and we'll get back to you as soon as possible.</p>
       </div>
 
+      <!-- form card (already glass, animated) -->
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="animate-slide-up">
 
         <!-- Name with Float Label & Tooltip -->

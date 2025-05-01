@@ -64,4 +64,10 @@
   transition: transform 0.3s ease;
 }
 
+/* Button active subtle zoom */
+:host ::ng-deep .p-button:active {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
 
