@@ -42,15 +42,18 @@
             isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
           "
         >
+          <!-- Selected Item Template -->
           <ng-template #selectedItem let-selectedOption>
             <div class="flex items-center gap-2">
-              <i class="pi pi-code"></i>
+              <i [class]="selectedOption.icon" class="text-lg"></i>
               <div>{{ selectedOption.name }}</div>
             </div>
           </ng-template>
+
+          <!-- Dropdown Items Template -->
           <ng-template let-lang #item>
             <div class="flex items-center gap-2">
-              <i class="pi pi-code"></i>
+              <i [class]="lang.icon" class="text-lg"></i>
               <div>{{ lang.name }}</div>
             </div>
           </ng-template>
@@ -98,15 +101,18 @@
             isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
           "
         >
+          <!-- Selected Item Template -->
           <ng-template #selectedItem let-selectedOption>
             <div class="flex items-center gap-2">
-              <i class="pi pi-code"></i>
+              <i [class]="selectedOption.icon" class="text-lg"></i>
               <div>{{ selectedOption.name }}</div>
             </div>
           </ng-template>
+
+          <!-- Dropdown Items Template -->
           <ng-template let-lang #item>
             <div class="flex items-center gap-2">
-              <i class="pi pi-code"></i>
+              <i [class]="lang.icon" class="text-lg"></i>
               <div>{{ lang.name }}</div>
             </div>
           </ng-template>

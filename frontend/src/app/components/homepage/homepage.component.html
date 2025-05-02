@@ -5,33 +5,61 @@
     'surface-ground text-black': !isDarkMode
   }"
 >
+  <!-- Languages AvatarGroup -->
+  <div class="card flex-wrap justify-center">
+    <p-avatar-group>
+      <ng-container *ngFor="let lang of languageAvatars">
+        <!-- If it has image -->
+        <p-avatar
+          *ngIf="lang.image"
+          [image]="lang.image"
+          [pTooltip]="lang.name"
+          size="large"
+          shape="circle"
+        />
+
+        <!-- If it's the "+X" avatar -->
+        <p-avatar
+          *ngIf="lang.label"
+          [label]="lang.label"
+          [pTooltip]="lang.name"
+          size="large"
+          shape="circle"
+        />
+      </ng-container>
+    </p-avatar-group>
+  </div>
+
   <!-- Headline -->
   <h1
     class="text-4xl md:text-6xl font-bold mb-2 transition-all duration-300"
-    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }">
+    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }"
+  >
     Convert Code. Instantly. Anywhere.
   </h1>
 
   <!-- Subheading -->
   <p
     class="text-lg md:text-xl max-w-30rem mb-5 transition-all duration-300"
-    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }">
-    Simplify your workflow by converting code between multiple programming languages—fast, accurate, and effortless.
-</p>
+    [ngClass]="{ 'text-gray-100': isDarkMode, 'text-indigo-900': !isDarkMode }"
+  >
+    Simplify your workflow by converting code between multiple programming
+    languages—fast, accurate, and effortless.
+  </p>
 
   <!-- Call-to-Action Button with Tooltip -->
   <button
-  pButton
-  class="p-button-rounded p-button-success px-4 py-3 text-lg font-semibold flex items-center gap-2 group"
-  (click)="goToConvertPanel()"
-  pTooltip="Click to start..."
-  tooltipPosition="bottom">
-  <i class="pi pi-bolt text-xl group-hover:animate-bounce transition duration-300"></i>
-  <span class="transition duration-300 group-hover:tracking-wide">
-    Start Now — It's Free
-  </span>
-</button>
-
+    pButton
+    class="p-button-rounded p-button-success px-4 py-3 text-lg font-semibold flex items-center gap-2 group"
+    (click)="goToConvertPanel()"
+    pTooltip="Click to start..."
+    tooltipPosition="bottom"
+  >
+    <i
+      class="pi pi-bolt text-xl group-hover:animate-bounce transition duration-300"
+    ></i>
+    <span class="transition duration-300 group-hover:tracking-wide">
+      Start Now — It's Free
+    </span>
+  </button>
 </div>
-
-

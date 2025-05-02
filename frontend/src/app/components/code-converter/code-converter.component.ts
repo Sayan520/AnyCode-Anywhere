@@ -36,21 +36,21 @@ export class CodeConverterComponent implements OnInit {
 
   // Language options for the dropdowns
   programmingLanguages = [
-    { name: 'Python', code: 'py' },
-    { name: 'JavaScript', code: 'js' },
-    { name: 'PHP', code: 'php' },
-    { name: 'Java', code: 'java' },
-    { name: 'C++', code: 'cpp' },
-    { name: 'C', code: 'c' },
-    { name: 'C#', code: 'cs' },
-    { name: 'TypeScript', code: 'ts' },
-    { name: 'SQL', code: 'sql' },
-    { name: 'Go', code: 'go' },
-    { name: 'Rust', code: 'rs' },
-    { name: 'Swift', code: 'swift' },
-    { name: 'Dart', code: 'dart' },
-    { name: 'Kotlin', code: 'kt' },
-    { name: 'Ruby', code: 'rb' },
+    { name: 'Python', code: 'py', icon: 'devicon-python-plain colored' },
+    { name: 'JavaScript', code: 'js', icon: 'devicon-javascript-plain colored' },
+    { name: 'PHP', code: 'php', icon: 'devicon-php-plain colored' },
+    { name: 'Java', code: 'java', icon: 'devicon-java-plain colored' },
+    { name: 'C++', code: 'cpp', icon: 'devicon-cplusplus-plain colored' },
+    { name: 'C', code: 'c', icon: 'devicon-c-plain colored' },
+    { name: 'C#', code: 'cs', icon: 'devicon-csharp-plain colored' },
+    { name: 'TypeScript', code: 'ts', icon: 'devicon-typescript-plain colored' },
+    { name: 'SQL', code: 'sql', icon: 'devicon-mysql-plain colored' },
+    { name: 'Go', code: 'go', icon: 'devicon-go-plain colored' },
+    { name: 'Rust', code: 'rs', icon: 'devicon-rust-plain colored' },
+    { name: 'Swift', code: 'swift', icon: 'devicon-swift-plain colored' },
+    { name: 'Dart', code: 'dart', icon: 'devicon-dart-plain colored' },
+    { name: 'Kotlin', code: 'kt', icon: 'devicon-kotlin-plain colored' },
+    { name: 'Ruby', code: 'rb', icon: 'devicon-ruby-plain colored' },
   ];
 
   // Inject the theme and conversion services
