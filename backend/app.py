@@ -124,10 +124,13 @@ def save_contact():
             return jsonify({"error": "All fields are required!"}), 400
 
         conn = get_connection()
+        if conn is None:
+            return jsonify({"error": "Database connection failed"}), 500
+
         cursor = conn.cursor()
         cursor.execute("""
             INSERT INTO ContactMessages (Name, Email, Message) 
-            VALUES (?, ?, ?)
+            VALUES (%s, %s, %s)
         """, (name, email, message))
         conn.commit()
         conn.close()
@@ -139,4 +142,4 @@ def save_contact():
         return jsonify({"error": "Internal Server Error"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))

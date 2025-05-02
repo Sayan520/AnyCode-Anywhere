@@ -1,6 +1,6 @@
-# 🔁 AI Code Converter – Backend (Flask + Gemini AI)
+# 🔁 AnyCode Anywhere – Backend (Flask + Gemini AI)
 
-This is the backend for the **AI Code Converter** project. It allows you to convert code from one programming language to another using **Google Gemini AI**.
+This is the backend for the **AnyCode Anywhere** project. It allows you to convert code from one programming language to another using **Google Gemini AI**.
 
 ---
 
