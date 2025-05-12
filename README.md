@@ -1,7 +1,9 @@
 
 # 🧩 AnyCode Anywhere
-
 > **Seamless Code Conversion — Anytime, Anywhere!**
+
+![AnyCodeAnywhere Screenshot](AnyCode-Anywhere.jpg)
+
 
 **AnyCode Anywhere** is a smart, AI-driven platform that transforms code between programming languages seamlessly.  
 Built with **Angular 19**, **PrimeNG** & **Flask**, it provides a clean, intuitive, and premium user experience for developers.  
@@ -52,12 +54,6 @@ Python, JavaScript, Java, C++, C#, Go, PHP, Swift, Dart, Kotlin, Ruby, R, and ma
 - Smooth UX with LocalStorage-powered dark mode and dynamic state management.
 - Animated moving backgrounds and glass-effect forms for an ultra-premium design.
 - Fast and efficient backend logic to handle code transformations securely.
-
----
-
-## 📸 Screenshots
-
-*(Coming Soon!)*
 
 ---
 

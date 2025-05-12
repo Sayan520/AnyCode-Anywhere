@@ -15,7 +15,7 @@ import { AvatarGroup } from 'primeng/avatargroup';
 export class HomepageComponent {
   isDarkMode = false;
 
-  //  languageAvatars example
+  // languageAvatars example
   originalLanguages = [
     {
       name: 'Python',
@@ -38,14 +38,14 @@ export class HomepageComponent {
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     },
     {
-      name: 'Java',
-      image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-    },
-    {
       name: 'PHP',
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    },
+    {
+      name: 'Java',
+      image:
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
     },
     {
       name: 'TypeScript',
@@ -91,3 +91,5 @@ export class HomepageComponent {
     this.router.navigate(['/convert']);
   }
 }
+
+

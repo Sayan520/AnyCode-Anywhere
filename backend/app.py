@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 import re
 
+# Initialize Flask app and CORS
 app = Flask(__name__)
 CORS(app)
 init_db()
@@ -44,7 +45,7 @@ def validate_conversion_input(code, input_language, output_language, filename):
 def convert_code(input_language, output_language, code):
     try:
         prompt = f"""Convert the following {input_language} code to {output_language} without any explanations or comments. Return only the converted code:{code}"""
-        model = genai.GenerativeModel("gemini-1.5-pro")
+        model = genai.GenerativeModel("gemini-2.0-flash")
         response = model.generate_content(prompt)
 
         if hasattr(response, "text"):
@@ -143,3 +144,5 @@ def save_contact():
 
 if __name__ == "__main__":
      app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
+
+
