@@ -87,7 +87,7 @@ export class ContactUsComponent implements OnInit {
           setTimeout(() => {
             console.log(this.contactForm.value);
             this.contactForm.reset();
-            this.loading = false; // Stop loading (after timeout)
+            this.loading = false; // Stop loading after 0.5 seconds
           }, 500);
         },
         error: (err) => {
@@ -96,12 +96,15 @@ export class ContactUsComponent implements OnInit {
             summary: 'Form Incomplete!',
             detail: 'Please fill out all required fields correctly.',
           });
+          // Stop loading if API fails after 3 seconds
+          setTimeout(() => {
+            this.loading = false;
+          }, 3000);
           console.error(err);
-        }
+        },
       });
     } else {
       this.contactForm.markAllAsTouched();
     }
   }
-
 }

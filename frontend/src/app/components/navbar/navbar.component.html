@@ -37,6 +37,20 @@
       ></i>
     </button>
 
+    <!-- Homepage Link -->
+    <button
+      pButton
+      type="button"
+      title="Home"
+      routerLink="/"
+      routerLinkActive="p-button-outlined"
+      [routerLinkActiveOptions]="{ exact: true }"
+      label="Home"
+      icon="pi pi-home"
+      class="p-button-text"
+      [ngClass]="{ 'text-primary': isDarkMode, 'text-black': !isDarkMode }"
+    ></button>
+
     <!-- Contact Link -->
     <button
       pButton

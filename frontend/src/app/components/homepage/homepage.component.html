@@ -5,30 +5,32 @@
     'surface-ground text-black': !isDarkMode
   }"
 >
-  <!-- Languages AvatarGroup -->
-  <div class="card flex-wrap justify-center">
-    <p-avatar-group>
-      <ng-container *ngFor="let lang of languageAvatars">
-        <!-- If it has image -->
-        <p-avatar
-          *ngIf="lang.image"
-          [image]="lang.image"
-          [pTooltip]="lang.name"
-          size="large"
-          shape="circle"
-        />
+<!-- Languages AvatarGroup -->
+<div class="card flex-wrap justify-center">
+  <p-avatar-group>
+    <ng-container *ngFor="let lang of languageAvatars">
+      <!-- If it has image -->
+      <p-avatar
+        *ngIf="lang.image"
+        [image]="lang.image"
+        [pTooltip]="lang.name"
+        size="large"
+        shape="circle"
+      />
 
-        <!-- If it's the "+X" avatar -->
-        <p-avatar
-          *ngIf="lang.label"
-          [label]="lang.label"
-          [pTooltip]="lang.name"
-          size="large"
-          shape="circle"
-        />
-      </ng-container>
-    </p-avatar-group>
-  </div>
+      <!-- If it's the "+X" avatar -->
+      <p-avatar
+        *ngIf="lang.label"
+        [label]="lang.label"
+        [pTooltip]="lang.name"
+        size="large"
+        shape="circle"
+        (click)="onExpandClick()"
+        [ngStyle]="{ 'cursor': 'pointer', 'background-color': '#dee2e6', 'color': '#495057' }"
+      />
+    </ng-container>
+  </p-avatar-group>
+</div>
 
   <!-- Headline -->
   <h1

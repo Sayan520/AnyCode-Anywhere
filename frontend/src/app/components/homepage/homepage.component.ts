@@ -18,6 +18,16 @@ export class HomepageComponent {
   // languageAvatars example
   originalLanguages = [
     {
+      name: 'Java',
+      image:
+        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
+    },
+    {
+      name: 'JavaScript',
+      image:
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    },
+    {
       name: 'Python',
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
@@ -28,24 +38,14 @@ export class HomepageComponent {
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
     },
     {
-      name: 'C++',
+      name: 'Go',
       image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg',
     },
     {
-      name: 'JavaScript',
+      name: 'Swift',
       image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-    },
-    {
-      name: 'PHP',
-      image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-    },
-    {
-      name: 'Java',
-      image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
     },
     {
       name: 'TypeScript',
@@ -53,27 +53,44 @@ export class HomepageComponent {
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     },
     {
-      name: 'CSS3',
+      name: 'C#',
       image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg',
     },
     {
-      name: 'Ruby',
+      name: 'Dart',
       image:
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg',
+    },
+    {
+      name: 'Kotlin',
+      image:
+        'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg',
+    },
+    {
+      name: 'C++',
+      image:
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
     },
   ];
 
   // Final list that includes avatars + the "+X"
   languageAvatars: { name: string; image?: string; label?: string }[] = [];
+  showAllAvatars: boolean = false;
 
   ngOnInit() {
+    this.updateLanguageAvatars();
+  }
+
+  // Handle the logic of showing/hiding avatars
+  updateLanguageAvatars() {
     const maxVisible = 5;
     const extraCount = this.originalLanguages.length - maxVisible;
 
-    this.languageAvatars = this.originalLanguages.slice(0, maxVisible);
-
-    if (extraCount > 0) {
+    if (this.showAllAvatars || extraCount <= 0) {
+      this.languageAvatars = [...this.originalLanguages];
+    } else {
+      this.languageAvatars = this.originalLanguages.slice(0, maxVisible);
       this.languageAvatars.push({
         name: 'More languages',
         label: `+${extraCount}`,
@@ -81,15 +98,21 @@ export class HomepageComponent {
     }
   }
 
+  // Expand the avatar group
+  onExpandClick() {
+    this.showAllAvatars = true;
+    this.updateLanguageAvatars();
+  }
+
+  // Router and theme service injection
   constructor(private router: Router, private themeService: ThemeService) {
     this.themeService.isDarkMode$.subscribe((mode) => {
       this.isDarkMode = mode;
     });
   }
 
+  // Navigate to convert panel
   goToConvertPanel() {
     this.router.navigate(['/convert']);
   }
 }
-
-

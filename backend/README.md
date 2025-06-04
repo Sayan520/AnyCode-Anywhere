@@ -46,7 +46,13 @@ pip install -r requirements.txt
 Create a `.env` file in the root of `backend/` and add your API key:
 
 ```
-GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here          # Google Gemini API Key
+
+DB_HOST=your_mysql_host                          # e.g., localhost or IP
+DB_USER=your_mysql_user
+DB_PASS=your_mysql_password
+DB_NAME=your_mysql_db_name
+
 ```
 
 > ⚠️ Make sure `.env` is listed in `.gitignore` so it's not tracked in version control.
@@ -59,7 +65,9 @@ GEMINI_API_KEY=your_gemini_api_key_here
 python app.py
 ```
 
-Server will be available at: [http://localhost:5000](http://localhost:5000)
+> ✅ In development: [http://localhost:5000](http://localhost:5000)
+
+> 🌐 In production: http://your-server-ip or via Docker/nginx
 
 ---
 
@@ -114,13 +122,28 @@ Submit a contact message.
 ## 🗂️ Project Structure
 
 ```
-backend/
-├── app.py                # Main Flask app
-├── db.py                 # DB initialization
-├── .env                  # API key storage
-├── requirements.txt      # Project dependencies
-├── static/files/         # Saved converted files
-└── templates/index.html  # Optional homepage
+📁 backend/
+├── 🚀 app.py               - Main Flask application
+├── 🔐 .env                 - Environment variables (GEMINI API, DB credentials)
+├── 📦 requirements.txt     - Python dependencies
+├── 📄 README.md            - Project overview and instructions
+
+📁 static/
+└── 📂 files/               - Saved converted files
+
+📁 routes/
+├── 📄 convert.py           - /api/convert route logic
+└── 📄 contact.py           - /api/contact route logic
+
+📁 services/
+└── 📄 ai_service.py        - Gemini API interaction logic
+
+📁 services/validator/
+└── 📄 input_validator.py   - Input validation logic
+
+📁 database/
+└── 📄 db.py                - MySQL DB connection & initialization
+
 ```
 
 ---

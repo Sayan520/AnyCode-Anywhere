@@ -4,10 +4,22 @@
 
 ![AnyCodeAnywhere Screenshot](AnyCode-Anywhere.jpg)
 
-
-**AnyCode Anywhere** is a smart, AI-driven platform that transforms code between programming languages seamlessly.  
-Built with **Angular 19**, **PrimeNG** & **Flask**, it provides a clean, intuitive, and premium user experience for developers.  
-Whether you're coding on desktop or mobile, AnyCode Anywhere ensures effortless code conversion — anytime, anywhere.
+<p align="center">
+    <strong>AnyCode Anywhere</strong> is a smart, AI-driven platform that transforms code between programming languages seamlessly.  
+    This project is built with <strong>Angular 19</strong>, <strong>PrimeNG</strong> & <strong>Flask</strong>. 
+    Whether you're coding on desktop or mobile, AnyCode Anywhere ensures effortless code conversion — <i>anytime, anywhere.</i>
+    <br />
+    <br />
+    <a href="https://github.com/Sayan520/AnyCode-Anywhere"><strong>Explore the Repo »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Sayan520/AnyCode-Anywhere/tree/main/backend">View Backend</a>
+    ·
+    <a href="https://github.com/Sayan520/AnyCode-Anywhere/tree/main/frontend">View Frontend</a>
+    ·
+    <a href="https://github.com/Sayan520/AnyCode-Anywhere/tree/main/deployment">Deployment Guide</a>
+  </p>
+  <br />
 
 ---
 
@@ -90,13 +102,31 @@ python app.py
 
 ---
 
+## 📲 Explore the App
+**https://anycode-anywhere.onrender.com/**
+
+---
+
+
 ## 📬 Contact
 
-Have questions, feedback, or want to contribute?  
-Feel free to reach out through the **Contact Us** form inside the app!
+Have questions, feedback, or want to contribute? 
+We’d love to hear from you!
 
-Or send an email to:  
-📧 **ghoshsayan5205@gmail.com**
+## 📱 Reach Out 
+
+### 📨 Contact Form
+Use the **Contact Us** form inside the application for a quick message.
+
+### 📧 Email
+Click below to send us an email:
+
+[![Gmail - sayan520](https://img.shields.io/badge/Gmail-SayanGhosh-red?style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)][reach_gmail] 
+
+### 💼 LinkedIn
+Let’s connect professionally:
+
+[![LinkedIn - Sayan Ghosh](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)][reach_linkedin] 
 
 ---
 
@@ -107,3 +137,7 @@ This project is licensed under the **MIT License**.
 ---
 
 > **Unlock the full potential of your code today with AnyCode Anywhere — the smarter way to transform code.**
+
+<!-- CONTACT LINKS -->
+[reach_linkedin]: https://linkedin.com/in/sayaan-ghosh  
+[reach_gmail]: mailto:ghoshsayan5205@gmail.com?subject=GitHub  

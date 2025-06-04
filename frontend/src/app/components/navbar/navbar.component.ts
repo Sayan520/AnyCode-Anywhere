@@ -28,6 +28,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = [
       {
+        label: 'Home',
+        icon: 'pi pi-home',
+        routerLink: '/'
+      },
+      {
         label: 'Contact',
         icon: 'pi pi-phone',
         routerLink: '/contact'

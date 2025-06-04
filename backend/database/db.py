@@ -1,5 +1,9 @@
 import os
 import mysql.connector
+from dotenv import load_dotenv
+
+# Load database configuration from .env file
+load_dotenv()
 
 # method to get the connection to the mysql-database
 def get_connection():

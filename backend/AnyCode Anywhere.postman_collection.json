@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "7e9fc1fc-7640-4fbc-b0f4-02c829c39b58",
+		"name": "AnyCode Anywhere",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39613149"
+	},
+	"item": [
+		{
+			"name": "Code Conversion",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"print('Hello, World!')\",\r\n  \"input_language\": \"python\",\r\n  \"output_language\": \"c\",\r\n  \"filename\":\"python_to_c\"\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/convert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"convert"
+					]
+				},
+				"description": "convert to any code to any code"
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Us",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sayan Ghoshal\",\r\n    \"email\": \"ghoshalsayan5205@gmail.com\",\r\n    \"message\":\"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/contact",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "anycode-anywhere-convert",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"print('Hello, World!')\",\r\n  \"input_language\": \"python\",\r\n  \"output_language\": \"javascript\",\r\n  \"filename\":\"python_to_js\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://anycode-anywhere-backend.onrender.com/api/convert",
+					"protocol": "https",
+					"host": [
+						"anycode-anywhere-backend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"convert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
